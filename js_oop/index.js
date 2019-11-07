@@ -37,7 +37,7 @@ var Rectangle = function(height,width){
 				console.log("I am a recetangle")
 				this.printProperties()
 				
-			}
+			}	
 
 			this.printProperties = function(){
 				console.log('My width is ' + this.width + ' My height is ' + this.height )
@@ -47,3 +47,19 @@ var Rectangle = function(height,width){
 
 var rect4 = new Rectangle(10,25)
 rect4.draw()
+
+
+
+//how new keyword work
+
+function myNew(cons){
+		var obj = {}
+		Object.setPrototypeOf(obj,cons.prototype)
+		var argsArray = Array.prototype.slice.apply(arguments)
+		cons.apply(obj,argsArray.slice(1))
+		return obj
+}
+
+
+var rect5 = myNew(Rectangle,14,15)
+rect5.draw()
