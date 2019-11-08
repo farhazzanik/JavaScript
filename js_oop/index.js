@@ -142,3 +142,32 @@ MyChange(NewObj.a)
 console.log(NewObj.a)
 
 
+
+// how abstraction work in javascript
+var Rectangle = function(height,width){
+		
+			this.height = height
+			this.width = width
+
+			var position = {
+				x:10,
+				y : 20
+			}
+			var printProperties = function(){
+				console.log('My width is ' + this.width + ' My height is ' + this.height )
+			}.bind(this)
+		
+
+			this.draw = function(){
+				console.log("I am a recetangle")
+				printProperties()
+				console.log("position x is " + position.x + " position y is " + position.y)
+				
+			}	
+
+			
+}
+
+
+var rect7 = new Rectangle(15,16)
+rect7.draw()
