@@ -146,17 +146,23 @@ console.log(NewObj.a)
 // how abstraction work in javascript
 var Rectangle = function(height,width){
 		
-			this.height = height
-			this.width = width
-
 			var position = {
 				x:10,
 				y : 20
 			}
+
+
+			this.height = height
+			this.width = width
+
+			
 			var printProperties = function(){
 				console.log('My width is ' + this.width + ' My height is ' + this.height )
 			}.bind(this)
 		
+			this.getPostiton = function(){
+				return position
+			}
 
 			this.draw = function(){
 				console.log("I am a recetangle")
@@ -165,9 +171,27 @@ var Rectangle = function(height,width){
 				
 			}	
 
+			Object.defineProperty(this,'position',{
+				get: function(){
+					return position
+				},
+
+				set : function(value){
+					position = value
+				}
+			})
+
 			
 }
 
 
 var rect7 = new Rectangle(15,16)
 rect7.draw()
+console.log(rect7.getPostiton())
+console.log(rect7.position)
+rect7.position = {
+	x : 58,
+	y : 56
+}
+
+console.log(rect7.position)
