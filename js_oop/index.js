@@ -114,4 +114,31 @@ var test = myFunc.bind(obj)
 
 test(8,9)
 
+//call by value and call by reference
+//pass by value and pass by reference
+
+var n  = 10
+
+function change(n){
+	n = n+100
+	console.log(n)
+}
+
+
+change(n)
+console.log(n)
+
+var NewObj = {
+	a:10,
+}
+
+function MyChange(n){
+	NewObj.a = NewObj.a + 100
+	console.log(NewObj.a)
+}
+
+MyChange(NewObj.a)
+
+console.log(NewObj.a)
+
 
