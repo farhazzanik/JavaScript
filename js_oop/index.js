@@ -203,6 +203,11 @@ var Square = function(width) {
 
 		this.width = width
 
+		this.getWidth = function(){
+			console.log("width is " + this.width)
+           this.draw();
+		}
+
 
 }
 
@@ -211,7 +216,8 @@ Square.prototype = {
 			console.log("this is Square")
 		},
 	toString : function(){
-		console.log("this is mywidth " + this.width)
+		this.getWidth()
+		console.log("this is my width " + this.width)
 	}
 }
 
