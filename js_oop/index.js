@@ -89,3 +89,29 @@ var Rect = new Function('height','width',`this.height = height
 
 var rect6 = new Rect(4,5)
 console.log(rect6);
+
+
+//bind call apply function details
+//call
+
+var obj = {
+	a:45,
+	b:15,
+}
+function myFunc(c,d){
+	console.log(this)
+	console.log(this.a + this.b+c+d)
+}
+
+myFunc.call(obj,10,15)
+
+//applly
+myFunc.apply(obj,[5,6])
+
+
+//bind method
+var test = myFunc.bind(obj)
+
+test(8,9)
+
+
