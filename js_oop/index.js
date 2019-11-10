@@ -199,8 +199,8 @@
 
 //instance vs prototype
 
-var Shape = function() {
-
+var Shape = function(color) {
+	this.color = color
 }
 
 Shape.prototype.common = function() {
@@ -208,8 +208,8 @@ Shape.prototype.common = function() {
 }
 
 
-var Square = function(width) {
-
+var Square = function(width,color) {
+	Shape.call(this,color)
     this.width = width
 
     this.getWidth = function() {
@@ -234,8 +234,8 @@ Square.prototype.toString = function() {
 
 
 
-var sqr1 = new Square(14)
-var sqr2 = new Square(15)
+var sqr1 = new Square(14,'Green')
+var sqr2 = new Square(15,'white')
 var shape = new Shape()
 // console.log(sqr1)
 // console.log(sqr2)
