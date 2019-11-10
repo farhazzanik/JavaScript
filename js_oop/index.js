@@ -237,6 +237,10 @@ Square.prototype.toString = function() {
     console.log("this is my width " + this.width)
 }
 
+Square.prototype.common = function(){
+	console.log("this is common functio for Square")
+}
+
 
 
 var sqr1 = new Square(14, 'Green')
@@ -255,8 +259,14 @@ cr = new Circle(2.5,"Yellow")
 //Method overriding
 
 Circle.prototype.common = function(){
-	Shape.prototype.common.call(this)
+	// Shape.prototype.common.call(this)
 	console.log("I am function from circle and overriding")
 }
 // console.log(sqr1)
 // console.log(sqr2)
+
+var ArrayObj = [sqr1,shape,cr]
+
+for (var i of ArrayObj){
+	i.common()
+}
