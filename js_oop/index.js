@@ -251,5 +251,12 @@ var Circle = function(radius,color){
 
 Extends(Circle,Shape)
 cr = new Circle(2.5,"Yellow")
+
+//Method overriding
+
+Circle.prototype.common = function(){
+	Shape.prototype.common.call(this)
+	console.log("I am function from circle and overriding")
+}
 // console.log(sqr1)
 // console.log(sqr2)
