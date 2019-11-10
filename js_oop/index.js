@@ -203,10 +203,8 @@ var Shape = function() {
 
 }
 
-Shape.prototype = {
-    common: function() {
-        console.log("this is common function")
-    },
+Shape.prototype.common = function() {
+    console.log("this is common function")
 }
 
 
@@ -223,6 +221,7 @@ var Square = function(width) {
 }
 
 Square.prototype = Object.create(Shape.prototype)
+Square.prototype.constructor = Square
 
 Square.prototype.draw = function() {
     console.log("this is Square")
