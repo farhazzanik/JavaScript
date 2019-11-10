@@ -199,8 +199,14 @@
 
 //instance vs prototype
 
+var Extends = function(Parent, child) {
+    Parent.prototype = Object.create(child.prototype)
+    Parent.prototype.constructor = Parent
+
+}
+
 var Shape = function(color) {
-	this.color = color
+    this.color = color
 }
 
 Shape.prototype.common = function() {
@@ -208,8 +214,8 @@ Shape.prototype.common = function() {
 }
 
 
-var Square = function(width,color) {
-	Shape.call(this,color)
+var Square = function(width, color) {
+    Shape.call(this, color)
     this.width = width
 
     this.getWidth = function() {
@@ -220,8 +226,7 @@ var Square = function(width,color) {
 
 }
 
-Square.prototype = Object.create(Shape.prototype)
-Square.prototype.constructor = Square
+Extends(Square,Shape)
 
 Square.prototype.draw = function() {
     console.log("this is Square")
@@ -234,8 +239,17 @@ Square.prototype.toString = function() {
 
 
 
-var sqr1 = new Square(14,'Green')
-var sqr2 = new Square(15,'white')
+var sqr1 = new Square(14, 'Green')
+var sqr2 = new Square(15, 'white')
 var shape = new Shape()
+
+var Circle = function(radius,color){
+	this.radius = radius
+	Shape.call(this,color)
+
+}
+
+Extends(Circle,Shape)
+cr = new Circle(2.5,"Yellow")
 // console.log(sqr1)
 // console.log(sqr2)
