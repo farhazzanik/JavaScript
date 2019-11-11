@@ -92,3 +92,18 @@ import '../styles/index.scss'
 // let arr = [1, 2, 3, 4, 5]
 // let [frist, second, , , last] = arr
 // console.log(frist, second, last)
+
+
+let obj = {
+	a:10,
+	b:20
+}
+
+console.log(Object.entries(obj))
+
+let arr = [
+	['a',10],
+	['b',20]
+]
+
+console.log(Object.fromEntries(arr))
