@@ -64,14 +64,31 @@ import '../styles/index.scss'
 // }
 
 //Enhance Object
-let a=10,b=20
-let obj = {
-	a,
-	b,
-	print(){
-		console.log("ES6 function declare")
-	}
-}
+// let a=10,b=20
+// let obj = {
+// 	a,
+// 	b,
+// 	print(){
+// 		console.log("ES6 function declare")
+// 	}
+// }
 
-console.log(obj)
-console.log(obj.print())
+// console.log(obj)
+// console.log(obj.print())
+
+// let person = {
+//     name: 'Mahfuzul Haque',
+//     email: 'mahfuzkhan2125@gmail.com',
+//     address: {
+//         city: 'Feni',
+//         country: 'BD0'
+//     }
+
+// }
+
+// let { name, email, address: { city, country } } = person
+// console.log(name, email, city, country)
+
+// let arr = [1, 2, 3, 4, 5]
+// let [frist, second, , , last] = arr
+// console.log(frist, second, last)
