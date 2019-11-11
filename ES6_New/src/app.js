@@ -19,22 +19,32 @@ let arr = [1, 2, 3]
 
 
 
-let iterate = arr[Symbol.iterator]()
+// let iterate = arr[Symbol.iterator]()
 
 
 
-console.log(iterate.next())
-console.log(iterate.next())
-console.log(iterate.next())
-console.log(iterate.next())
+// console.log(iterate.next())
+// console.log(iterate.next())
+// console.log(iterate.next())
+// console.log(iterate.next())
 
-let str = 'Text'
-let strIterator = str[Symbol.iterator]()
+// let str = 'Text'
+// let strIterator = str[Symbol.iterator]()
 
-console.log(strIterator.next())
-console.log(strIterator.next())
-console.log(strIterator.next())
-console.log(strIterator.next())
-console.log(strIterator.next())
+// console.log(strIterator.next())
+// console.log(strIterator.next())
+// console.log(strIterator.next())
+// console.log(strIterator.next())
+// console.log(strIterator.next())
 // console.log(arr[Symbol.iterator])
 // console.log('str'[Symbol.iterator])
+
+
+for(let v of arr){
+	console.log(v)
+}
+
+
+for (let v of 'Mahfuzul haque'){
+	console.log(v)
+}
