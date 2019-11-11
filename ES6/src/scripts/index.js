@@ -1,10 +1,23 @@
 import '../styles/index.scss'
 
-import { sum, sub  } from './math'
+//ES6 Arrow function syntext
 
-console.log('Hello Webpack 4')
+//Es5 function declar
 
-console.log(sum(10, 20))
-console.log(sub(10, 20))
+// function add(a,b){
+// 	return a+b;
+// }
 
-alert('Hello Catians')
+let add = (a ,b) => {
+	return a+b;
+}
+
+//single line funciton declare
+let sum = (a,b) => a+b
+
+//single arg function declare
+let sqr = a => a*a
+
+console.log(add(45,25))
+console.log(sum(45,25))
+console.log(sqr(5))
