@@ -62,3 +62,16 @@ import '../styles/index.scss'
 // let obj2 = {
 // 	... obj
 // }
+
+//Enhance Object
+let a=10,b=20
+let obj = {
+	a,
+	b,
+	print(){
+		console.log("ES6 function declare")
+	}
+}
+
+console.log(obj)
+console.log(obj.print())
