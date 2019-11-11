@@ -33,3 +33,32 @@ import '../styles/index.scss'
 // }
 
 // obj.print()
+
+
+
+// function sum(... rest) {
+//     // let sum = 0;
+
+//     // for (let i = 0; i < arguments.length; i++) {
+//     //     sum = sum + arguments[i]
+//     // }
+//     // return sum
+
+//     return rest.reduce((a,b) => a+b)
+// }
+
+// console.log(sum(1, 2, 3, 4, 5, 6))
+
+//speard operator
+// let a = [1, 2, 3]
+// console.log(...a)
+
+// let obj = {
+//     a: 10,
+//     b: 20,
+//     c: 30
+// }
+
+// let obj2 = {
+// 	... obj
+// }
