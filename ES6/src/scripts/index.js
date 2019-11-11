@@ -8,16 +8,28 @@ import '../styles/index.scss'
 // 	return a+b;
 // }
 
-let add = (a ,b) => {
-	return a+b;
-}
+// let add = (a ,b) => {
+// 	return a+b;
+// }
 
 //single line funciton declare
-let sum = (a,b) => a+b
+// let sum = (a,b) => a+b
 
 //single arg function declare
-let sqr = a => a*a
+// let sqr = a => a*a
 
-console.log(add(45,25))
-console.log(sum(45,25))
-console.log(sqr(5))
+// console.log(add(45,25))
+// console.log(sum(45,25))
+// console.log(sqr(5))
+
+
+// let obj = {
+// 	name: 'Mahfuzul Haque',
+// 	print : function(){
+// 		setTimeout(() => {
+// 			console.log(`this is ${this.name}`)
+// 		},1000)
+// 	}
+// }
+
+// obj.print()
