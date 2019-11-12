@@ -115,33 +115,59 @@
 // console.log(ite.next())
 
 //fucntion check is it iterable
-function isIterable(obj){
-	return typeof obj[Symbol.iterator] === 'function'
+function isIterable(obj) {
+    return typeof obj[Symbol.iterator] === 'function'
 }
 
-let set = new Set([1,2,3])
-set.add(4)
-set.add(5)
-set.add(3)
-set.add(2)
+// let set = new Set([1,2,3])
+// set.add(4)
+// set.add(5)
+// set.add(3)
+// set.add(2)
 
-console.log(set)
-console.log(set.size)
-set.delete(1)
-console.log(set)
-console.log(set.has(2))
-console.log(set.keys())
-console.log(set.values())
+// console.log(set)
+// console.log(set.size)
+// set.delete(1)
+// console.log(set)
+// console.log(set.has(2))
+// console.log(set.keys())
+// console.log(set.values())
 
-console.log(isIterable(set))
-let keysIterator = set.keys()
-let valuesIterator = set.values()
-console.log(keysIterator.next())
-console.log(valuesIterator.next())
+// console.log(isIterable(set))
+// let keysIterator = set.keys()
+// let valuesIterator = set.values()
+// console.log(keysIterator.next())
+// console.log(valuesIterator.next())
 
 
-for(let v of set){
-	console.log(v)
+// for(let v of set){
+// 	console.log(v)
+// }
+
+// console.log(set.entries())
+
+let map = new Map([
+    ['a', 10],
+    ['b', 20],
+    ['c', 30]
+])
+
+map.set('d', 40)
+map.set('e', 50)
+map.set({ name: 'Mahfuzul haque' }, 45)
+console.log(map)
+console.log(map.size)
+map.delete('c')
+console.log(map)
+console.log(map.get('a'))
+console.log(map.values())
+console.log(map.keys())
+console.log(map.entries())
+
+for (let [k, v] of map) {
+    console.log(k, v)
 }
 
-console.log(set.entries())
+map.forEach((v, k) => {
+    console.log(v, k)
+})
