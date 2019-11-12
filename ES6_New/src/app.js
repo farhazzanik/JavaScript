@@ -274,26 +274,36 @@
 
 
 
-const _height = new WeakMap()
-const _color = new WeakMap()
-const _test = new WeakMap()
-class Shape {
-	constructor(height,color){
-		this.size = 100
-		_height.set(this, height)
-		_color.set(this,color)
-		_test.set(this,()=>{
-			console.log(this.size)
-		})
-	}
+// const _height = new WeakMap()
+// const _color = new WeakMap()
+// const _test = new WeakMap()
+// class Shape {
+//     constructor(height, color) {
+//         this.size = 100
+//         _height.set(this, height)
+//         _color.set(this, color)
+//         _test.set(this, () => {
+//             console.log(this.size)
+//         })
+//     }
 
-	draw(){
-		console.log('drawing .... ')
-		console.log(_height.get(this),_color.get(this))
-		_test.get(this)()
-	}
-}
+//     get height() {
+//         return _height.get(this)
+//     }
+
+//     set height(v) {
+//         _height.set(this, v)
+//     }
+
+//     draw() {
+//         console.log('drawing .... ')
+//         console.log(_height.get(this), _color.get(this))
+//         _test.get(this)()
+//     }
+// }
 
 
-let sh = new Shape(14,'RED')
-console.log(sh.draw())
+// let sh = new Shape(14, 'RED')
+// console.log(sh.draw())
+// sh.height = 100
+// console.log(sh.r)
