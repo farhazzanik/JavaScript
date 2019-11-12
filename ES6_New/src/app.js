@@ -309,33 +309,46 @@
 // console.log(sh.r)
 
 
-class Shape {
-	constructor(color){
-		this.color = color
-	}
+// class Shape {
+// 	constructor(color){
+// 		this.color = color
+// 	}
 
-	draw(){
-		console.log('drawing....')
-	}
-}
+// 	draw(){
+// 		console.log('drawing....')
+// 	}
+// }
 
-class Rectengle extends Shape{
-	constructor(color,height,width){
-		super(color)
-		this.height = height
-		this.width = width
-	}
+// class Rectengle extends Shape{
+// 	constructor(color,height,width){
+// 		super(color)
+// 		this.height = height
+// 		this.width = width
+// 	}
 
-	mul(){
-		return this.height * this.width
-	}
+// 	mul(){
+// 		return this.height * this.width
+// 	}
 
-	draw(){
-		console.log('this is Rectengle drawing...')
-	}
+// 	draw(){
+// 		console.log('this is Rectengle drawing...')
+// 	}
 
-}
+// }
 
+import Rectengle from './Rectangle.js'
 
 let rect = new Rectengle('Green',14,15)
 console.log(rect.draw())
+
+
+// import * as func from './func.js'
+
+// console.log(func.add(45,25))
+// console.log(func.sub(45,25))
+
+
+
+import {add, sub} from './func.js'
+console.log(add(45,25))
+console.log(sub(22,26)) 
