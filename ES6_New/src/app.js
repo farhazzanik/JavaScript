@@ -189,3 +189,20 @@
 // ])
 
 // console.log(weakMap.get(a))
+
+class Rectengle{
+	constructor(height,width){
+		this.height = height
+		this.width = width
+	}
+
+
+	draw(){
+		console.log('drawing....')
+	}
+}
+
+
+let rect  = new Rectengle(14,15)
+console.log(rect)
+console.log(rect.draw())
