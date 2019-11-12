@@ -215,31 +215,85 @@
 // console.log(rect.draw())
 
 
-class Person {
-	constructor(name,email){
-		this.name = name
-		this.email = email
+// class Person {
+// 	constructor(name,email){
+// 		this.name = name
+// 		this.email = email
 
 
+// 	}
+
+
+// 	print(){
+// 		//console.log(this.name , this.email)
+// 		console.log(this)
+// 	}
+
+
+// 	static create(str){
+// 		console.log(str)
+// 		let person = JSON.parse(str)
+// 		//console.log(person.name)
+// 		return new Person(person.name,person.email)
+// 	}
+// }
+
+
+
+
+// let str = '{"name" : "Mahfuzul Haque", "email" : "Mahfuzkhan2125@gmail.com"}'
+
+// let p1 = Person.create(str)
+// console.log(p1)
+// console.log(p1 instanceof Person)
+// console.log(p1.print())
+
+// let print = p1.test
+// console.log(print)
+
+// const _height = Symbol()
+// const _color = Symbol()
+// const _draw = Symbol()
+// class Shape {
+// 	constructor(height,color){
+// 		this[_height] = height
+// 		this[_color] = color
+// 	}
+
+// 	[_draw](){
+// 		console.log('drawing .... ')
+// 	}
+// }
+
+
+// let sh = new Shape(14,'RED')
+// console.log(sh)
+// //console.log(Object.getOwnPropertyNames(sh))
+// let keys  = Object.getOwnPropertySymbols(sh)[0]
+// console.log(sh[keys])
+
+
+
+const _height = new WeakMap()
+const _color = new WeakMap()
+const _test = new WeakMap()
+class Shape {
+	constructor(height,color){
+		this.size = 100
+		_height.set(this, height)
+		_color.set(this,color)
+		_test.set(this,()=>{
+			console.log(this.size)
+		})
 	}
 
-	print(){
-		console.log(this.name , this.email)
-	}
-
-
-	static create(str){
-		console.log(str)
-		let person = JSON.parse(str)
-		//console.log(person.name)
-		return new Person(person.name,person.email)
+	draw(){
+		console.log('drawing .... ')
+		console.log(_height.get(this),_color.get(this))
+		_test.get(this)()
 	}
 }
 
 
-let str = '{"name" : "Mahfuzul Haque", "email" : "Mahfuzkhan2125@gmail.com"}'
-
-let p1 = Person.create(str)
-console.log(p1)
-console.log(p1 instanceof Person)
-console.log(p1.print())
+let sh = new Shape(14,'RED')
+console.log(sh.draw())
