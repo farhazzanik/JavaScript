@@ -115,9 +115,9 @@
 // console.log(ite.next())
 
 //fucntion check is it iterable
-function isIterable(obj) {
-    return typeof obj[Symbol.iterator] === 'function'
-}
+// function isIterable(obj) {
+//     return typeof obj[Symbol.iterator] === 'function'
+// }
 
 // let set = new Set([1,2,3])
 // set.add(4)
@@ -146,28 +146,46 @@ function isIterable(obj) {
 
 // console.log(set.entries())
 
-let map = new Map([
-    ['a', 10],
-    ['b', 20],
-    ['c', 30]
-])
+// let map = new Map([
+//     ['a', 10],
+//     ['b', 20],
+//     ['c', 30]
+// ])
 
-map.set('d', 40)
-map.set('e', 50)
-map.set({ name: 'Mahfuzul haque' }, 45)
-console.log(map)
-console.log(map.size)
-map.delete('c')
-console.log(map)
-console.log(map.get('a'))
-console.log(map.values())
-console.log(map.keys())
-console.log(map.entries())
+// map.set('d', 40)
+// map.set('e', 50)
+// map.set({ name: 'Mahfuzul haque' }, 45)
+// console.log(map)
+// console.log(map.size)
+// map.delete('c')
+// console.log(map)
+// console.log(map.get('a'))
+// console.log(map.values())
+// console.log(map.keys())
+// console.log(map.entries())
 
-for (let [k, v] of map) {
-    console.log(k, v)
-}
+// for (let [k, v] of map) {
+//     console.log(k, v)
+// }
 
-map.forEach((v, k) => {
-    console.log(v, k)
-})
+// map.forEach((v, k) => {
+//     console.log(v, k)
+// })
+
+
+
+// let a = { a: 10 },
+//     b = { b: 20 }
+
+
+// let weakSet = new WeakSet([a, b])
+// a =null
+
+// console.log(weakSet.has(b))
+
+// let weakMap = new WeakMap([
+//     [a, 10],
+//     [b, 20]
+// ])
+
+// console.log(weakMap.get(a))
