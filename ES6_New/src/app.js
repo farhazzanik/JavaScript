@@ -307,3 +307,35 @@
 // console.log(sh.draw())
 // sh.height = 100
 // console.log(sh.r)
+
+
+class Shape {
+	constructor(color){
+		this.color = color
+	}
+
+	draw(){
+		console.log('drawing....')
+	}
+}
+
+class Rectengle extends Shape{
+	constructor(color,height,width){
+		super(color)
+		this.height = height
+		this.width = width
+	}
+
+	mul(){
+		return this.height * this.width
+	}
+
+	draw(){
+		console.log('this is Rectengle drawing...')
+	}
+
+}
+
+
+let rect = new Rectengle('Green',14,15)
+console.log(rect.draw())
