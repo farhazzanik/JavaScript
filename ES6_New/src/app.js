@@ -190,26 +190,56 @@
 
 // console.log(weakMap.get(a))
 
-class Rectengle{
-	constructor(height,width){
-		this.height = height
-		this.width = width
-		this.another = function(){
-			console.log('own function...')
-		}
+// class Rectengle{
+// 	constructor(height,width){
+// 		this.height = height
+// 		this.width = width
+// 		this.another = function(){
+// 			console.log('own function...')
+// 		}
+// 	}
+
+
+// 	draw(){
+// 		console.log('drawing....')
+// 	}
+
+// 	test(){
+
+// 	}
+// }
+
+
+// let rect  = new Rectengle(14,15)
+// console.log(rect)
+// console.log(rect.draw())
+
+
+class Person {
+	constructor(name,email){
+		this.name = name
+		this.email = email
+
+
+	}
+
+	print(){
+		console.log(this.name , this.email)
 	}
 
 
-	draw(){
-		console.log('drawing....')
-	}
-
-	test(){
-
+	static create(str){
+		console.log(str)
+		let person = JSON.parse(str)
+		//console.log(person.name)
+		return new Person(person.name,person.email)
 	}
 }
 
 
-let rect  = new Rectengle(14,15)
-console.log(rect)
-console.log(rect.draw())
+let str = '{"name" : "Mahfuzul Haque", "email" : "Mahfuzkhan2125@gmail.com"}'
+
+let p1 = Person.create(str)
+console.log(p1)
+console.log(p1 instanceof Person)
+console.log(p1.print())
