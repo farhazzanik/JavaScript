@@ -194,11 +194,18 @@ class Rectengle{
 	constructor(height,width){
 		this.height = height
 		this.width = width
+		this.another = function(){
+			console.log('own function...')
+		}
 	}
 
 
 	draw(){
 		console.log('drawing....')
+	}
+
+	test(){
+
 	}
 }
 
