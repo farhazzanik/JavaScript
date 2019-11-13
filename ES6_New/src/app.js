@@ -380,27 +380,30 @@
 // }
 // let words = makeWords(55)
 // console.log(words)
-class CustomError extends Error {
-	constructor(msg){
-		super(msg)
+// class CustomError extends Error {
+// 	constructor(msg){
+// 		super(msg)
 		
-		if(Error.captureStackTrace){
-			Error.captureStackTrace(this,CustomError)
-		}
-	}
+// 		if(Error.captureStackTrace){
+// 			Error.captureStackTrace(this,CustomError)
+// 		}
+// 	}
 
-}
+// }
 
-try {
-	console.log('I am line 1')
-	throw new CustomError('i am your error')
-	console.log('I am line 2')
-	console.log('I am line 3')
-} catch (e) {
+// try {
+// 	console.log('I am line 1')
+// 	throw new CustomError('i am your error')
+// 	console.log('I am line 2')
+// 	console.log('I am line 3')
+// } catch (e) {
 
-	console.log(e.message)
-	console.log('this is custom error message')
+// 	console.log(e.message)
+// 	console.log('this is custom error message')
 
-} finally {
-	console.log('I am final block')
-}
+// } finally {
+// 	console.log('I am final block')
+// }
+
+import './asyn/asyn.js'
+
