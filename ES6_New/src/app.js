@@ -366,17 +366,41 @@
 // console.log(convertInt('dfdfd85.65'))
 
 
-function makeWords(text) {
-    try {
-    	let str = text.trim( )
-    	let word = str.split(' ')
-    	return word
-    } catch (e) {
+// function makeWords(text) {
+//     try {
+//     	let str = text.trim( )
+//     	let word = str.split(' ')
+//     	return word
+//     } catch (e) {
 
-    	//console.log(e.message)
-    	console.log("Please provide a valid text")
+//     	//console.log(e.message)
+//     	console.log("Please provide a valid text")
 
-    }
+//     }
+// }
+// let words = makeWords(55)
+// console.log(words)
+class CustomError extends Error {
+	constructor(msg){
+		super(msg)
+		
+		if(Error.captureStackTrace){
+			Error.captureStackTrace(this,CustomError)
+		}
+	}
+
 }
-let words = makeWords(55)
-console.log(words)
+
+try {
+	console.log('I am line 1')
+	throw new CustomError('i am your error')
+	console.log('I am line 2')
+	console.log('I am line 3')
+} catch (e) {
+
+	console.log(e.message)
+	console.log('this is custom error message')
+
+} finally {
+	console.log('I am final block')
+}
