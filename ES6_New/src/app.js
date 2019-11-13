@@ -336,10 +336,10 @@
 
 // }
 
-import Rectengle from './Rectangle.js'
+// import Rectengle from './Rectangle.js'
 
-let rect = new Rectengle('Green',14,15)
-console.log(rect.draw())
+// let rect = new Rectengle('Green',14,15)
+// console.log(rect.draw())
 
 
 // import * as func from './func.js'
@@ -349,6 +349,34 @@ console.log(rect.draw())
 
 
 
-import {add, sub} from './func.js'
-console.log(add(45,25))
-console.log(sub(22,26)) 
+// import {add, sub} from './func.js'
+// console.log(add(45,25))
+// console.log(sub(22,26)) 
+
+//Error handeling
+// function convertInt(v){
+// 	let convert = Number.parseInt(v)
+// 	if(!convert){
+// 		return "Please provite a exact number that con be convert"
+// 	}
+// 	return convert
+// }
+
+
+// console.log(convertInt('dfdfd85.65'))
+
+
+function makeWords(text) {
+    try {
+    	let str = text.trim( )
+    	let word = str.split(' ')
+    	return word
+    } catch (e) {
+
+    	//console.log(e.message)
+    	console.log("Please provide a valid text")
+
+    }
+}
+let words = makeWords(55)
+console.log(words)
