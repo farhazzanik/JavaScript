@@ -30,29 +30,139 @@
 
 // xhr.send()
 
-function getRequest(url,callback) {
+// function getRequest(url,callback) {
 
-    const xhr = new XMLHttpRequest()
-    xhr.open('get', url)
+//     const xhr = new XMLHttpRequest()
+//     xhr.open('get', url)
 
-    xhr.onreadystatechange = function(e) {
-        if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-                let response = JSON.parse(xhr.response)
-                callback(null, response)
-            } else {
-                callback(error , null)
-            }
-        }
-    }
-    xhr.send()
-}
+//     xhr.onreadystatechange = function(e) {
+//         if (xhr.readyState === 4) {
+//             if (xhr.status === 200) {
+//                 let response = JSON.parse(xhr.response)
+//                 callback(null, response)
+//             } else {
+//                 callback(error , null)
+//             }
+//         }
+//     }
+//     xhr.send()
+// }
 
 
-getRequest('https://jsonplaceholder.typicode.com/users', (err , res) => {
-	if(err){
-		console.log(err)
-	}else{
-		res.forEach( r => console.log(r.name))
-	}
+// getRequest('https://jsonplaceholder.typicode.com/users', (err , res) => {
+// 	if(err){
+// 		console.log(err)
+// 	}else{
+// 		res.forEach( r => console.log(r.name))
+// 	}
+// })
+
+
+//promise example
+// let p1 = new Promise((resolve , reject) => {
+// 	setTimeout( () => {
+// 		console.log('one')
+// 	},5000)
+// }) 
+
+
+// p1.then((v) => {
+// 	console.log(v)
+// }).catch((e) => {
+// 	console.log(e)
+// })
+
+
+// function getIphone(isPassed) {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             if (isPassed) {
+//                 resolve('i got i phone')
+//             } else {
+//                 reject(new Error('you have failed'))
+//             }
+//         }, 2000)
+//     })
+// }
+
+
+// getIphone(false)
+//     .then((res) => {
+//         console.log(res)
+//     })
+//     .catch((e) => {
+//         console.log(e,message)
+//     })
+
+//fetch api 
+const Base_url = 'https://jsonplaceholder.typicode.com'
+
+// fetch(`${Base_url}/users/1`)
+//     .then(res => res.json())
+
+//     .then((data) => {
+//         console.log(data)
+//         return Promise.resolve('New promise')
+//     }).then(newPromis => {
+//         console.log(newPromis)
+//     })
+//     .catch((e) => {
+//         console.log(e)
+//     })
+
+// function getRequest(url) {
+
+//     const xhr = new XMLHttpRequest()
+//     xhr.open('get', url)
+
+//     return new Promise((resolve, reject) => {
+
+//         xhr.onreadystatechange = function(e) {
+//             if (xhr.readyState === 4) {
+//                 if (xhr.status === 200) {
+//                     let response = JSON.parse(xhr.response)
+//                     resolve(response)
+//                 } else {
+//                     reject('Error Occured')
+//                 }
+//             }
+//         }
+//         xhr.send()
+
+//     })
+
+
+// }
+
+// getRequest(`${Base_url}/users/100000`).
+// 	then((res) => {
+// 		console.log(res)
+// 	})
+// 	.catch(e => {
+// 		console.log(e)
+// 	})
+
+
+// const delay = s => new Promise(resolve => setTimeout(resolve, s * 1000))
+
+// delay(1).then(() => console.log('1 second delay'))
+// delay(2).then(() => console.log('2 second delay'))
+// delay(3).then(() => console.log('3 second delay'))
+// delay(4).then(() => console.log('4 second delay'))
+
+let p1 = new Promise(resolve => {
+    setTimeout(resolve, 1000, 'one')
 })
+
+let p2 = new Promise(resolve => {
+    setTimeout(resolve, 3000, 'tow')
+})
+
+let promiseArr = [p1, p2]
+
+
+Promise.all(promiseArr)
+    .then(arr => console.log(arr))
+
+Promise.race(promiseArr)
+    .then(arr => console.log(arr))
